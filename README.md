@@ -8,7 +8,7 @@
 
 ### About the Experiment 
 
-Fill a brief description of this experiment here
+The flywheel consists of a heavy circular disc or wheel with a strong axle mounted on ball bearings on two fixed supports.The wheel can be rotated in a vertical plane about the horizontal axle.It is used to determine the moment of inertia.
 
 <b>Name of Developer | <b> Amrita Virtual Labs
 :--|:--|
