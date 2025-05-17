@@ -1,0 +1,29 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Moment of momentum is called",
+      "answers": {
+        "a": "Angular momentum",
+        "b": "Moment of inertia",
+        "c": "Rotational torque",
+        "d": "Torque"
+      },
+      
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The dimensional formula for MI is",
+      "answers": {
+        "a": "MLT<sup>0</sup>",
+        "b": "M<sup>0</sup>L<sup>2</sup>T",
+        "c": "ML<sup>2</sup>T<sup>0</sup>",
+        "d": "MLT"
+      },
+      
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    }
+  ]
+}
