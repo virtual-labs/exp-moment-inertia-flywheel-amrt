@@ -1,5 +1,11 @@
 ### Theory
 
+
+
+<div style="float: right; margin-left: 20px;"> <img src="./images/figure1.jpg" alt="Figure 1" style="max-width: 150px; height: auto;"> <p style="text-align: center; font-size: smaller; font-style: italic;"></p> </div>
+
+
+
 The flywheel consists of a heavy circular disc/massive wheel fitted with a strong axle projecting on either side.The axle is mounted on ball bearings on two fixed supports. There is a small peg on the axle. One end of a cord is loosely looped around the peg and its other end carries the weight-hanger.
 
                                                     
