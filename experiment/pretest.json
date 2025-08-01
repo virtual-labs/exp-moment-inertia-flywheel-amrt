@@ -24,6 +24,42 @@
       
       "correctAnswer": "c",
       "difficulty": "beginner"
+    },
+     {
+      "question": "When a ballet dancer on a rotating table brings his stretched hands close to his chest, then",
+      "answers": {
+        "a": "MI decreases",
+        "b": "Angular velocity decreases",
+        "c": "MI increases",
+        "d": "Angular momentum increases"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "If the mass distribution of a given body shifts towards the axis of rotation , its moment of inertia",
+      "answers": {
+        "a": "Remain unaffected",
+        "b": "Decrease",
+        "c": "Increase",
+        "d": "Become double"
+      },
+      
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+     {
+      "question": "We consider the moment of inertia of a body when it's motion is",
+      "answers": {
+        "a": "Curved",
+        "b": "Rotational",
+        "c": "Linear",
+        "d": "none of the above"
+      },
+      
+      "correctAnswer": "b",
+      "difficulty": "beginner"
     }
   ]
 }
