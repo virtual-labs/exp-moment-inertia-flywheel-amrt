@@ -5,13 +5,43 @@
 Fly wheel, weight hanger, slotted weights, stop watch, metre scale.
 
 
-### Procedure for doing Simulator
-1. Choose any desired environment by clicking on the “combo box".
-2. Adjust the sliders to have suitable dimensions for flywheel arrangement.
-3. Click on “Release fly wheel" to start the experiment.
-4. No of revolutions (N) of the flywheel, after the loop slips off from peg is indicated on the side of axle.
-5. The time taken by flywheel to come to rest is noted from stop watch.
-6. Repeat the experiment for different values of variables.
+# Procedure
+
+## Step 1: Select the Environment
+1. Click the **Choose Environment** dropdown menu.
+2. Select the desired environment (e.g., **Earth, g = 9.8 m/s²**).
+
+> **Note:** Use **Earth** for the initial experiment. Later, repeat the experiment with other environments (such as the Moon or Mars) to observe the effect of gravity.
+
+## Step 2: Set the Flywheel Parameters
+Use the sliders under the **VARIABLES** section to configure the experiment.
+
+- **Mass of Flywheel (M)**
+- **Diameter of Flywheel (D)**
+- **Mass of Hanging Weight (m)**
+- **Diameter of Axle (d)**
+- **Number of Wounds of Chord (N₁)**
+
+> **Note:** Keep the flywheel parameters constant during the first trial. Change only one parameter at a time in subsequent trials.
+
+## Step 3: Start the Experiment
+1. Click **RELEASE FLY WHEEL**.
+2. Observe the following:
+   - The hanging weight descends and rotates the flywheel.
+   - The cord slips off the axle after unwinding.
+   - The flywheel continues rotating due to inertia and gradually comes to rest because of friction.
+
+## Step 4: Record the Observations
+After the flywheel stops:
+
+1. Record the **Number of Revolutions (N₂)** displayed near the axle.
+2. Record the **Time (t)** shown on the digital stopwatch.
+
+## Step 5: Repeat the Experiment
+1. Change one or more input parameters.
+2. Repeat the experiment.
+3. Record the observations for each trial.
+4. Compare the results for different values of mass, dimensions, or gravitational environment.
 
 ### Procedure for doing Real Lab
 
