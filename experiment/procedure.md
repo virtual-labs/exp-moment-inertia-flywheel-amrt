@@ -1,11 +1,10 @@
-### Procedure
+# Procedure
 
-### Apparatus:
+## Apparatus:
 
 Fly wheel, weight hanger, slotted weights, stop watch, metre scale.
 
 
-# Procedure
 ## Procedure for doing Simulator
 #### Step 1: Select the Environment
 1. Click the **Choose Environment** dropdown menu.
@@ -62,7 +61,7 @@ After the flywheel stops:
 
 $$I=\frac{Nm}{N+n}\left[ \frac{2gh}{\omega^{2}}-r^{2} \right]$$
 
-### Observations
+## Observations
 
 
 <img src="./images/figure2.jpg" alt="Figure 1" style="max-width: 500px; height: auto;">
