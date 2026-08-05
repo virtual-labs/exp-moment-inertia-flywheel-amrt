@@ -45,13 +45,6 @@ var rotation,
   reset_flag,
   wheel_rotation_speed;
 
-/** NEW: globals needed for the theoretical-vs-experimental Moment of Inertia comparison */
-var theoretical_moment_of_inertia,
-  experimental_moment_of_inertia,
-  total_time_taken,
-  total_rotation_count,
-  error_percentage;
-
 var thread_anim_rect = new createjs.Shape();
 
 var long_string = new createjs.Shape();
@@ -444,10 +437,6 @@ function directiveFunction() {
         scope.no_of_wound_lbl = _("No. of wound of chord:");
         scope.mInertia_lbl = _("First start experiment..!");
         scope.mInertia_val = "";
-        scope.mInertia_exp_lbl = ""; /** NEW */
-        scope.mInertia_exp_val = ""; /** NEW */
-        scope.mInertia_error_lbl = ""; /** NEW */
-        scope.mInertia_error_val = ""; /** NEW */
         btn_lbls = [_("Release fly wheel"), _("Hold fly wheel")];
         scope.release_hold_txt = btn_lbls[0];
         scope.reset = _("Reset");
@@ -565,7 +554,7 @@ function initialisationOfVariables() {
   angular_distance = 0; /** Initial value of angular distance */
   number_of_rotation = 0; /** Initial value of number of rotation */
   final_rotation = false;
-  getChildName("height_txt").text = "6.28cm";
+  getChildName("height_txt").text = "02cm";
 }
 /** Set the initial status of the bitmap and text depends on its visibility and initial values */
 function initialisationOfImages() {
