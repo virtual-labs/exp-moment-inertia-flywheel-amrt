@@ -251,10 +251,10 @@ function digitRotation() {
   getChildName("decimal_one").text = parseInt(rotation_decimal / 10);
   getChildName("decimal_ten").text = rotation_decimal % 10;
   var _height =
-    ((no_of_wound - rotation) * 2 * 3.14 * diameter_of_axle) / 2 -
+    (no_of_wound - rotation) * 2 -
     parseFloat((rotation_decimal / 50).toFixed(1));
   if (rotation < no_of_wound) {
-    getChildName("height_txt").text = _height.toFixed(2) + "cm";
+    getChildName("height_txt").text = _height.toFixed(1) + "cm";
   } else if (rotation == no_of_wound) {
     getChildName("height_txt").text = "0.0cm";
   }
@@ -359,9 +359,7 @@ function noOfWoundsChange(scope) {
     (scope.no_of_wound - 1) * 3; /** Positioning the weights */
   line_mask.y = weight_obj.y;
   getChildName("height_txt").text =
-    (((no_of_wound * 2 * diameter_of_axle) / 200) * 3.14 * 100).toFixed(2) +
-    "cm";
-
+    (no_of_wound < 5 ? "0" : "") + no_of_wound * 2 + "cm";
   stage.update();
 }
 
