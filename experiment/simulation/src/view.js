@@ -8,7 +8,7 @@ var btn_lbls, time_slots, time_slot_indx;
 
 var rotation_speed, speed_correction;
 
-var line, rotation_in, time_slots;
+var line, rotation_in, time_slots, N, _t, _m, _n, _h, _r, experimentScope;
 
 var thread_anim_object, thread_anim_frame, thread_anim_width;
 
