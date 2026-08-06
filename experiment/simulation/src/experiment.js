@@ -1,5 +1,6 @@
 function releaseHold(scope) {
   /** This function will execute while start/pause the rotaiotn of fly wheel */
+  experimentScope = scope;
   scope.control_disable = true;
   temp_scope.btn_disabled = true;
   reset_flag = false;
@@ -28,7 +29,7 @@ function releaseHold(scope) {
     time_slots[rotation],
   ); /** Function will execute the motion of weight */
   scope.mInertia_lbl = _("Moment of Inertia of Flywheel: ");
-  scope.mInertia_val = moment_of_inertia_of_flywheel.toFixed(4);
+  // scope.mInertia_val = moment_of_inertia_of_flywheel.toFixed(4);
   rolling = true;
 }
 function wheelRolling() {
@@ -61,6 +62,55 @@ function wheelRolling() {
         });
     });
 }
+// Final calcultion and disply MI values in the result section
+function displayValues() {
+  // console.log("Time slots: ", time_slots);
+  // console.log("Time slot index: ", time_slot_indx);
+  // console.log("Time: ", _sum);
+  // console.log("Number of rotations: ", number_of_rot);
+
+  N =
+    Number(getChildName("hundred").text) * 100 +
+    Number(getChildName("ten").text) * 10 +
+    Number(getChildName("one").text) +
+    Number(getChildName("decimal_one").text) / 10 +
+    Number(getChildName("decimal_ten").text) / 100;
+  console.log("Total Rotation", N);
+  _t =
+    parseInt(clockContainer.getChildByName("stopWatchSec").text, 10) +
+    parseInt(clockContainer.getChildByName("stopWatchmilli").text, 10) / 1000;
+  console.log("Time: ", _t);
+
+  // clockContainer.getChildByName("stopWatchMin").text = min;
+  // clockContainer.getChildByName("stopWatchHr").text = hr;
+
+  // var _N = number_of_rot;
+  // var _t = _sum / 10000; /** Time taken to complete all rotation */
+  // var _m = mass_of_rings / 1000; /** Mass of rings(weights) */
+  // var _n = no_of_wound; /** Number of wound over axle */
+  // var _h =
+  //   ((no_of_wound - rotation) * 2 * 3.14 * diameter_of_axle) / 2 -
+  //   parseFloat((rotation_decimal / 50).toFixed(1));
+  // var _r = diameter_of_axle / 200; /** Diameter of axle */
+  experimentScope.mInertia_val = (
+    ((N * _m) / (N + _n)) *
+    0.01 *
+    ((2 * gravity * _h) / Math.pow((4 * 3.14 * N) / _t, 2) - Math.pow(_r, 2))
+  ).toFixed(4);
+  console.log("Moment of Inertia of Flywheel: ", experimentScope.mInertia_val);
+  console.log("w : ", (4 * 3.14 * N) / _t);
+  console.log("Nm/(N+n) : ", (N * _m) / (N + _n));
+  // moment_of_inertia_of_flywheel.toFixed(4);
+  /* Parameters for I calculation
+  N = number_of_rot
+  t = _sum
+  r= _radius
+h = _height
+g = gravity
+m = _mass
+n = no_of_wound */
+}
+
 function wheelRollingEnd() {
   /** Function to execute the last rotaion of fly wheel */
   var _wheel_to_move = last_rotation_angle * 3.6;
@@ -242,6 +292,7 @@ function endOfCounter() {
     clockContainer.getChildByName("play").off("click", listner_play);
     clockContainer.getChildByName("play").off("click", play_event);
   }
+  displayValues(); /** To display the final value of moment of inertia of fly wheel */
   temp_scope.$apply();
 }
 
@@ -250,6 +301,7 @@ function digitRotation() {
   rotation_decimal < 99 ? rotation_decimal++ : (rotation_decimal = 0);
   getChildName("decimal_one").text = parseInt(rotation_decimal / 10);
   getChildName("decimal_ten").text = rotation_decimal % 10;
+
   var _height =
     ((no_of_wound - rotation) * 2 * 3.14 * diameter_of_axle) / 2 -
     parseFloat((rotation_decimal / 50).toFixed(1));
@@ -263,6 +315,7 @@ function digitRotation() {
     ROT_COUNT = last_rotation_angle;
     rotation_speed = time_slots[rotation] / 4;
   }
+
   rotation_in = setTimeout(
     function () {
       digitRotation();
@@ -411,7 +464,7 @@ function preCalcultion(scope) {
     pre_rot = 0,
     number_of_rot = 0;
   var _first_flag = true,
-    angular_velo = 0;
+    angular_velo = 0.1;
   var _temp_time_slots = [];
   do {
     _time = _time + INTERVAL; /** To calculate time */
@@ -456,13 +509,48 @@ function preCalcultion(scope) {
         time_slots[i + 1] = _temp_time_slots[i + 1] - _temp_time_slots[i];
         _sum += time_slots[i];
       }
-      scope.mInertia_val = moment_of_inertia_of_flywheel.toFixed(4);
+      // scope.mInertia_val = moment_of_inertia_of_flywheel.toFixed(4);
       last_rotation_angle =
         parseFloat((number_of_rot % 1).toFixed(2)) *
         100; /** To get decimal portion of number of rotation*/
+      // console.log(
+      //   "Number of rotations: ",
+      //   number_of_rot,
+      //   "Last rotation angle: ",
+      //   last_rotation_angle,
+      // );
     }
   } while (angular_velo > 0);
+  console.log("Time: ", _sum);
+  console.log("Number of rotations: ", number_of_rot);
+  // console.log("Sec: ", clockContainer.getChildByName("stopWatchSec").text);
+  // console.log("Milli: ", clockContainer.getChildByName("stopWatchmilli").text);
+  // console.log("Total Rotation", getChildName("decimal_one").text);
+
+  _t = _sum / 10000; /** Time taken to complete all rotation */
+  _m = mass_of_rings / 1000; /** Mass of rings(weights) */
+  _n = no_of_wound; /** Number of wound over axle */
+  _h =
+    ((no_of_wound - rotation) * 2 * 3.14 * diameter_of_axle) / 2 -
+    parseFloat((rotation_decimal / 50).toFixed(1));
+  _r = diameter_of_axle / 200; /** Diameter of axle */
+  // scope.mInertia_val =
+  //   ((_N * _m) / (_N + _n)) *
+  //   (
+  //     (2 * gravity * _h) / Math.pow((4 * 3.14 * _N) / _t, 2) -
+  //     Math.pow(_r, 2)
+  //   ).toFixed(4);
+  // moment_of_inertia_of_flywheel.toFixed(4);
+  /* Parameters for I calculation
+  N = number_of_rot
+  t = _sum
+  r= _radius
+h = _height
+g = gravity
+m = _mass
+n = no_of_wound */
 }
+
 function resetExperiment(scope) {
   /** Function to reset all functionality and UI of simulation */
   scope.release_hold_txt = btn_lbls[0];
