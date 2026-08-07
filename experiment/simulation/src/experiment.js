@@ -92,14 +92,16 @@ function displayValues() {
   //   ((no_of_wound - rotation) * 2 * 3.14 * diameter_of_axle) / 2 -
   //   parseFloat((rotation_decimal / 50).toFixed(1));
   // var _r = diameter_of_axle / 200; /** Diameter of axle */
-  experimentScope.mInertia_val = (
-    ((N * _m) / (N + _n)) *
-    0.01 *
-    ((2 * gravity * _h) / Math.pow((4 * 3.14 * N) / _t, 2) - Math.pow(_r, 2))
-  ).toFixed(4);
+  experimentScope.mInertia_val =
+    (
+      ((N * _m) / (N + _n)) *
+      0.01 *
+      ((2 * gravity * _h) / Math.pow((4 * 3.14 * N) / _t, 2) - Math.pow(_r, 2))
+    ).toFixed(4) + " kg·m²";
   console.log("Moment of Inertia of Flywheel: ", experimentScope.mInertia_val);
   console.log("w : ", (4 * 3.14 * N) / _t);
   console.log("Nm/(N+n) : ", (N * _m) / (N + _n));
+
   // moment_of_inertia_of_flywheel.toFixed(4);
   /* Parameters for I calculation
   N = number_of_rot
